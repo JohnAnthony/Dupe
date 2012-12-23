@@ -1,0 +1,2 @@
+-- Catch errors when removing files (permission errors etc.)
+-- Add options for symbolic links and ignore symbolic links by default
