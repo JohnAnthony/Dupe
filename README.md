@@ -1,6 +1,6 @@
 # Dupe
 
-A UNIX-like (but not *NIX contstrained) tool for findind and removing duplicate files
+A UNIX-like (but not *NIX contstrained) tool for finding and removing duplicate files
 
 ## Usage
 
