@@ -21,34 +21,32 @@ $ sudo make install
 
 Example usage:
 ``` bash
-~/quicklisp >> touch BLANK1 BLANK2
-~/quicklisp >> dupe -r .
+~/.emacs.d/lisp >> dupe -r .
 Added directory: .
 Scanning directory ./
-Scanning directory ./tmp/
-Scanning directory ./quicklisp/
-Scanning directory ./local-projects/
-Scanning directory ./dists/
-Scanning directory ./dists/quicklisp/
-Scanning directory ./cache/
-Scanning directory ./cache/asdf-fasls/
-Scanning directory ./cache/asdf-fasls/1fk411/
-Processing 31 files.
-Duplicate found: 
-  1 :: ./dists/quicklisp/enabled.txt
-  2 :: ./BLANK2
-(Size 0.0B)
-Would you like to delete (1) / (2) / (b)oth / (n)either ?
-2
-Duplicate found: 
-  1 :: ./BLANK2
-  2 :: ./BLANK1
-(Size 0.0B)
-Would you like to delete (1) / (2) / (b)oth / (n)either ?
-2
-~/quicklisp >> ls
-asdf.lisp  cache/  dists/  local-projects/  quicklisp/  setup.lisp  tmp/
-~/quicklisp >> 
+Scanning directory ./themes/
+Scanning directory ./scripts/
+Scanning directory ./contrib/
+Scanning directory ./color-theme-6.6.0/
+Scanning directory ./examples/
+Processing 54 files.
+
+Duplicate found: (Size 459.0B)
+  1 :: ./color-theme-autoloads.el~
+  2 :: ./color-theme-autoloads.in
+Would you like to delete (1) / (2) / (b)oth / (n)either? n
+
+Duplicate found: (Size 1.25KB)
+  1 :: ./mandelbrot.el
+  2 :: ./DELETEME
+Would you like to delete (1) / (2) / (b)oth / (n)either? 2
+
+Duplicate found: (Size 0.0B)
+  1 :: ./configure-stamp
+  2 :: ./build-stamp
+Would you like to delete (1) / (2) / (b)oth / (n)either? n
+All duplicates handled.
+~/.emacs.d/lisp >> 
 ```
 
 ## License
