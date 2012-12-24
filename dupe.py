@@ -231,7 +231,7 @@ def pretty_size(size):
         if size > lim:
             continue
         else:
-            return round(size / float(lim / 2**10), 2).__str__() + suf
+            return str(round(size / float(lim / 2**10), 2)) + suf
 
 def show_duplicates(dup1, dup2):
     '''
@@ -243,9 +243,9 @@ def show_duplicates(dup1, dup2):
     print("  1 :: " + dup1.path)
     print("  2 :: " + dup2.path)
 
-def sigint_handler():
+def sigint_handler(_, _):
     ''' For handling SIGINT messages gracefully '''
-    print('\n\nSIGINT received. Exiting cleanly...')
+    print("\n\nSIGINT received. Exiting cleanly...")
     sys.exit(0)
 
 ## Main    
