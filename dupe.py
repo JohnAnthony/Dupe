@@ -243,8 +243,9 @@ def show_duplicates(dup1, dup2):
     print("  1 :: " + dup1.path)
     print("  2 :: " + dup2.path)
 
-def sigint_handler(_, _):
+def sigint_handler(sig, _):
     ''' For handling SIGINT messages gracefully '''
+    print(sig)
     print("\n\nSIGINT received. Exiting cleanly...")
     sys.exit(0)
 
