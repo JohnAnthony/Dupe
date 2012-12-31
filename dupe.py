@@ -70,28 +70,26 @@ class File():
 
 ## Top-level functions
 
-def dupecheck_recurse(lst):
+def dupecheck_iterative(lst):
     ''' Recursively steps over a list looking for duplicates '''
-    if len(lst) < 2:
-        return
-    head = lst[0]
-    tail = lst[1:]
-    dupes = duplicates(head, tail)
-    
-    for dupe in dupes:
-        show_duplicates(head, dupe)
-        choice = get_choice()
-        if choice == 'n':
-            continue
-        if choice in ('2', 'b'):
-            os.remove(dupe.path)
-            dupes.remove(dupe)
-            tail.remove(dupe)
-        if choice in ('1', 'b'):
-            os.remove(head.path)
-            break
+    while len(lst) >= 2:
+        head = lst[0]
+        tail = lst[1:]
 
-    dupecheck_recurse(tail)
+        for dupe in duplicates(head, tail):
+            show_duplicates(head, dupe)
+            choice = get_choice()
+            if choice == 'n':
+                continue
+            if choice in ('2', 'b'):
+                os.remove(dupe.path)
+                dupes.remove(dupe)
+                tail.remove(dupe)
+            if choice in ('1', 'b'):
+                os.remove(head.path)
+                break
+
+        lst = lst[1:]
 
 def duplicates(file_, lst):
     '''
@@ -240,7 +238,7 @@ def main():
         print("Processing " + str(len(paths)) + " files.")
 
     files = paths_to_files(paths)
-    dupecheck_recurse(files)
+    dupecheck_iterative(files)
     print("All duplicates handled.")
 
 if __name__ == "__main__":
