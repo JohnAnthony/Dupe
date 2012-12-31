@@ -71,7 +71,7 @@ class File():
 ## Top-level functions
 
 def dupecheck_iterative(lst):
-    ''' Recursively steps over a list looking for duplicates '''
+    ''' Iteratively steps over a list looking for duplicates '''
     while len(lst) >= 2:
         head = lst[0]
         tail = lst[1:]
