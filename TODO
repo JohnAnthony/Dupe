@@ -1,3 +1,3 @@
 -- Catch errors when removing files (permission errors etc.)
 -- Add option for following symbolic links
--- Filter out instances of the same file using os.path.samefile rather than nub
+-- Filter out instances of the same file using os.path.samefile rather than nub (when available i.e. UNIX only)
