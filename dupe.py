@@ -32,7 +32,7 @@ class Config():
             for root, dirs, files in os.walk(dir_):
                 print("Processing directory: " + root)
                 for file_ in files:
-                    dirfiles.append(root + "/" + file_)
+                    dirfiles.append(os.path.join(root, file_))
         return nub(dirfiles)
 
 class File():
@@ -114,30 +114,6 @@ Please see the readme file or manpage for proper usage inctructions.
 
     print(usage_txt)
     exit(1)
-
-def files_in_dir(dir_, recurse=False):
-    '''
-    Takes a directory path as an argument and returns a list of file
-    path strings in that directory. Takes an additional option
-    argument allowing this file gathering to become recursive
-    '''
-
-    # Sanitise input
-    if dir_[-1] != "/":
-        dir_san = dir_ + "/"
-    else:
-        dir_san = dir_
-
-    print("Scanning directory " + dir_san)
-    files = []
-    for file_ in os.listdir(dir_san):
-        fullpath = dir_san + file_
-        if os.path.isdir(fullpath):
-            if recurse:
-                files = files + files_in_dir(fullpath, True)
-        else:
-            files.append(fullpath)
-    return files
 
 def get_choice():
     ''' Simple dialogue to ask which file to delete of a pair '''
