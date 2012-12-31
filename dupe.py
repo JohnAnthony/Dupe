@@ -100,14 +100,6 @@ def duplicates(file_, lst):
             matches.append(file2)
     return matches
 
-def elem_after(elem, lst):
-    '''
-    Finds an element "elem" in a list and returns everything after
-    that element
-    '''
-    index = lst.index(elem) + 1
-    return lst[index:]
-
 def exit_with_usage_info():
     ''' Exit cleanly with a list of flags and flag information '''
 
