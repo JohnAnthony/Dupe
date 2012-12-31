@@ -29,10 +29,11 @@ class Config():
         '''
         dirfiles = self.files
         for dir_ in self.directories:
-            for root, dirs, files in os.walk(dir_):
+            for root, _, files in os.walk(dir_):
                 print("Processing directory: " + root)
                 for file_ in files:
                     dirfiles.append(os.path.join(root, file_))
+
         return nub(dirfiles)
 
 class File():
