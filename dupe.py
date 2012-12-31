@@ -27,10 +27,13 @@ class Config():
         Returns a list of all files in self.directories and follows
         rules as appropriate for flags (i.e. recursively etc.)
         '''
-        dirfiles = []
-        for dirs in self.directories:
-            dirfiles = dirfiles + files_in_dir(dirs, self.recursive)
-        return nub(self.files + dirfiles)
+        dirfiles = self.files
+        for dir_ in self.directories:
+            for root, dirs, files in os.walk(dir_):
+                print("Processing directory: " + root)
+                for file_ in files:
+                    dirfiles.append(root + "/" + file_)
+        return nub(dirfiles)
 
 class File():
     '''
