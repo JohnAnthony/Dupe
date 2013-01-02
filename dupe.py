@@ -75,7 +75,7 @@ def dupecheck_iterative(lst):
     while len(lst) >= 2:
         head = lst[0]
         tail = lst[1:]
-        dupes = duplicates(head, tail):
+        dupes = duplicates(head, tail)
 
         for dupe in dupes:
             show_duplicates(head, dupe)
